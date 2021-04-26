@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">IoT</string>
+    <string name="spn_cuestion">Choose a language</string>
+
+
+    <string-array name="Preguntas">
+        <item>¿Cual es el nombre de tu mascota?</item>
+        <item>¿Cual es el nombre de tu actor favorito?</item>
+        <item>¿Cual es el nombre de tu canción favorita?</item>
+
+    </string-array>
+</resources>
