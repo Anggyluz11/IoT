@@ -12,7 +12,7 @@
         android:id="@+id/contraseña"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="220dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPersonName"
@@ -25,14 +25,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="174dp"
-        android:layout_height="173dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/llave"
+        android:id="@+id/desbloquear"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/llave2"
         app:layout_constraintEnd_toEndOf="@+id/contraseña"
         app:layout_constraintStart_toStartOf="@+id/contraseña"
         app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+
+    <Button
+        android:id="@+id/recup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#534940"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desbloquear" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
