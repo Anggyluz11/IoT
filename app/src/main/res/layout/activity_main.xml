@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/contraseña"
+        android:id="@+id/contra"
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:layout_marginTop="250dp"
@@ -25,14 +25,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/accessButton"
         android:layout_width="174dp"
         android:layout_height="173dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/llave"
-        app:layout_constraintEnd_toEndOf="@+id/contraseña"
-        app:layout_constraintStart_toStartOf="@+id/contraseña"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+        app:layout_constraintEnd_toEndOf="@+id/contra"
+        app:layout_constraintStart_toStartOf="@+id/contra"
+        app:layout_constraintTop_toBottomOf="@+id/contra" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
