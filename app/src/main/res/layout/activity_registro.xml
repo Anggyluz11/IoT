@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#534940"
     tools:context=".registro">
 
     <TextView
@@ -95,7 +96,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/usuario2"
+        android:background="@drawable/usuario"
         app:layout_constraintEnd_toEndOf="@+id/cont2"
         app:layout_constraintStart_toStartOf="@+id/cont2"
         app:layout_constraintTop_toBottomOf="@+id/cont2" />
@@ -106,7 +107,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/regresar"
+        android:background="@drawable/cerrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

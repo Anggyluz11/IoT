@@ -37,16 +37,26 @@ public class EncendidoApagado extends AppCompatActivity {
                 if(!flag){
                     ap_enc.setImageResource(R.drawable.abierto);
                     letter.setText("Abierta");
-                    bluetoothJhr.Tx("on");
+                    bluetoothJhr.Tx("a");
                     flag=true;
                 }else{
                     ap_enc.setImageResource(R.drawable.cerrado);
                     letter.setText("Cerrada");
-                    bluetoothJhr.Tx("off");
+                    bluetoothJhr.Tx("c");
                     flag=false;
                 }
             }
         });
 
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        bluetoothJhr.ConectaBluetooth();
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        bluetoothJhr.CierraConexion();
     }
 }
