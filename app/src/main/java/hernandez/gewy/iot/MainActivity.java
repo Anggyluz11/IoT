@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton desbloquear;
@@ -26,6 +29,23 @@ public class MainActivity extends AppCompatActivity {
         desbloquear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String rutina = "";
+                try {
+                    BufferedReader dec = new BufferedReader(new InputStreamReader(openFileInput(nombre)));
+                    rutina = dec.readLine();
+                    String cadena= "";
+                    for(int i=0; i<rutina.length(); i++){
+                        if(rutina.charAt(i)=='#'){
+                            Carga(cadena);
+                            cadena="";
+                        }else{
+                            cadena+=rutina.charAt(i);
+
+                        }
+                    }
+                }catch (Exception e){
+
+                }
                 Intent intent = new Intent(MainActivity.this, EncendidoApagado.class);
                 startActivity(intent);
                 finish();
@@ -34,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         recu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegistroU.class);
+                Intent intent = new Intent(MainActivity.this, registro.class);
                 startActivity(intent);
                 finish();
             }

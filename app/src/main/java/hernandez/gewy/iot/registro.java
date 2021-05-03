@@ -2,12 +2,16 @@ package hernandez.gewy.iot;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.io.OutputStreamWriter;
 
 public class registro extends AppCompatActivity {
 
@@ -37,9 +41,7 @@ public class registro extends AppCompatActivity {
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(registro.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });
     }
