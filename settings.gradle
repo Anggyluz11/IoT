@@ -1,3 +1,4 @@
+include ':biometric-auth'
 include ':bluetoothjhr'
 include ':app'
 rootProject.name = "IoT"

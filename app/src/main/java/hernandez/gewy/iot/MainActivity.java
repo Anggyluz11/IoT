@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.an.biometric.BiometricCallback;
+import com.an.biometric.BiometricManager;
+
+public class MainActivity extends AppCompatActivity implements BiometricCallback {
     ImageButton acceder;
     EditText contra;
     Button recu;
@@ -43,11 +46,67 @@ public class MainActivity extends AppCompatActivity {
                     if(!pass.equals("cdhand30")){
                         Toast.makeText(getApplicationContext(),"Clave incorrecta",Toast.LENGTH_SHORT).show();
                     }else{
-                        startActivity(new Intent(MainActivity.this,DispositivoBluetooth.class));
-                        finish();
+                        new BiometricManager.BiometricBuilder(MainActivity.this)
+                                .setTitle("Desbloqueo por huella")
+                                .setSubtitle("")
+                                .setDescription("Escaneé su huella")
+                                .setNegativeButtonText("cancel")
+                                .build()
+                                .authenticate(MainActivity.this);
                     }
                 }
             }
         });
+    }
+
+    @Override
+    public void onSdkVersionNotSupported() {
+
+    }
+
+    @Override
+    public void onBiometricAuthenticationNotSupported() {
+
+    }
+
+    @Override
+    public void onBiometricAuthenticationNotAvailable() {
+
+    }
+
+    @Override
+    public void onBiometricAuthenticationPermissionNotGranted() {
+
+    }
+
+    @Override
+    public void onBiometricAuthenticationInternalError(String error) {
+
+    }
+
+    @Override
+    public void onAuthenticationFailed() {
+
+    }
+
+    @Override
+    public void onAuthenticationCancelled() {
+
+    }
+
+    @Override
+    public void onAuthenticationSuccessful() {
+        startActivity(new Intent(MainActivity.this,DispositivoBluetooth.class));
+        finish();
+    }
+
+    @Override
+    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {
+
+    }
+
+    @Override
+    public void onAuthenticationError(int errorCode, CharSequence errString) {
+
     }
 }
